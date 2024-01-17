@@ -1,0 +1,6 @@
+com\dini\mahasiswa\request\MahasiswaRequest.class
+com\dini\mahasiswa\entity\Mahasiswa.class
+com\dini\mahasiswa\repository\MahasiswaRepository.class
+com\dini\mahasiswa\service\MahasiswaService.class
+com\dini\mahasiswa\controller\MahasiswaController.class
+com\dini\mahasiswa\MahasiswaApplication.class
