@@ -1,8 +1,6 @@
 # flutter_application_crud
 
-masih butuhkan samo si dinik, 
-ingek sado urang butuh bantuan 
-urang lain juo nyo.!!
+masih punya nik kan.!!
 
 ## Getting Started
 
