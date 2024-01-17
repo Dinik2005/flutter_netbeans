@@ -1,11 +1,10 @@
-import 'package:flutter_application_crud/nilaikuliah/mainnilaikuliah.dart';
-
 class NilaiKuliah {
   int id;
-  int idmahasiswa; // Ganti dengan tipe data yang sesuai
-  int idmatakuliah; // Ganti dengan tipe data yang sesuai
-  double nilai; // Ganti dengan tipe data yang sesuai
+  int idmahasiswa;
+  int idmatakuliah;
+  double nilai;
 
+  // Remove the idMahasiswa parameter from the constructor
   NilaiKuliah({
     required this.id,
     required this.idmahasiswa,
@@ -13,6 +12,7 @@ class NilaiKuliah {
     required this.nilai,
   });
 
+  // Update the factory method to use the constructor parameters
   factory NilaiKuliah.fromJson(Map<String, dynamic> json) {
     return NilaiKuliah(
       id: json['id'],

@@ -25,7 +25,7 @@ class _UpdateState extends State<Update> {
     super.initState();
     _kodeController.text = widget.kode;
     _namaController.text = widget.nama;
-    _sksController.text = widget.sks.toString();
+    _sksController.text = widget.sks.toString(); // Mengonversi ke string
   }
 
   @override
@@ -55,16 +55,17 @@ class _UpdateState extends State<Update> {
               ElevatedButton(
                 onPressed: () async {
                   // Melakukan update data MataKuliah
-                  MataKuliah updatedMataKuliah = MataKuliah(
+                  MataKuliah editPost = MataKuliah(
                     id: widget.id,
                     kode: _kodeController.text,
                     nama: _namaController.text,
-                    sks: int.tryParse(_sksController.text) ?? 0,
+                    sks: int.parse(_sksController.text), // Mengubah ke tipe int
                   );
 
-                  await _apiService.updateMataKuliah(updatedMataKuliah);
+                  print(_namaController.text);
 
-                  // Setelah update, Anda dapat melakukan apa yang diperlukan, seperti navigasi ke layar lain atau pembaruan tampilan.
+                  MataKuliah editedPost =
+                  await _apiService.updateMataKuliah(editPost);
                 },
                 child: Text('Update'),
               ),

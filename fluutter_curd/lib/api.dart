@@ -3,7 +3,7 @@ import 'package:flutter_application_crud/mahasiswa.dart';
 import 'package:http/http.dart' as http;
 
 class ApiService {
-  static const String baseUrl = 'http://192.168.100.168:9001/api/v1/mahasiswa';
+  static const String baseUrl = 'http://192.168.1.238:9001/api/v1/mahasiswa';
 
   Future<List<Mahasiswa>> getMahasiswa() async {
     final response = await http.get(Uri.parse(baseUrl));

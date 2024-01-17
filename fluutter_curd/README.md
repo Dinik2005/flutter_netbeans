@@ -1,6 +1,8 @@
 # flutter_application_crud
 
-A new Flutter project.
+masih butuhkan samo si dinik, 
+ingek sado urang butuh bantuan 
+urang lain juo nyo.!!
 
 ## Getting Started
 

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_crud/mahasiswa.dart';
 import 'package:flutter_application_crud/api.dart';
-import 'edit.dart';
+import 'package:flutter_application_crud/edit.dart';
 
 void main() {
-  runApp(mahasiswaApp());
+  runApp(const mahasiswaApp());
 }
 
 class mahasiswaApp extends StatelessWidget {
@@ -14,6 +14,10 @@ class mahasiswaApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: MyHomePage(),
+      theme: ThemeData(
+        primarySwatch: Colors.red,
+      ),
+
     );
   }
 }
@@ -36,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Data Mahasiswa'),
+        title: Text('Data Mahasiswa',),
       ),
       body: Column(
         children: [
@@ -62,6 +66,18 @@ class _MyHomePageState extends State<MyHomePage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
+                      TextButton(
+                        onPressed: () {
+                          _namaController.clear();
+                          _emailController.clear();
+                          _tgllahirController.clear();
+                          setState(() {
+                            idMahasiswa = 0;
+                          });
+                        },
+                        child: Text('Refresh Data'), // Menggunakan teks "Refresh Data" sebagai tombol refresh
+                      ),
+
                       IconButton(
                         onPressed: () async {
                           Mahasiswa newPost = Mahasiswa(
@@ -82,17 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         icon: Icon(Icons.add),
                         tooltip: 'Tambah Data',
                       ),
-                      TextButton(
-                        onPressed: () {
-                          _namaController.clear();
-                          _emailController.clear();
-                          _tgllahirController.clear();
-                          setState(() {
-                            idMahasiswa = 0;
-                          });
-                        },
-                        child: Text('Refresh Data'), // Menggunakan teks "Refresh Data" sebagai tombol refresh
-                      ),
+
                       IconButton(
                         onPressed: () async {
                           Mahasiswa editPost = Mahasiswa(
@@ -155,32 +161,13 @@ class _MyHomePageState extends State<MyHomePage> {
                                   _apiService.getMahasiswa();
                                   setState(() {});
                                 },
-                                icon: Icon(Icons.delete),
+                                icon: Icon(
+                                  Icons.delete,
+                                  color: Colors.red, // Ganti dengan warna yang diinginkan
+                                ),
                                 tooltip: 'Delete',
                               ),
-                              IconButton(
-                                onPressed: () async {
-                                  Mahasiswa selectedMahasiswa = await _apiService
-                                      .getMahasiswaById(posts[index].id);
 
-                                  idMahasiswa = selectedMahasiswa.id;
-                                  _namaController.text =
-                                      selectedMahasiswa.nama;
-                                  _emailController.text =
-                                      selectedMahasiswa.email;
-                                  _tgllahirController.text =
-                                      selectedMahasiswa.tgllahir;
-
-                                  _apiService.getMahasiswa();
-
-                                  setState(() {
-                                    idMahasiswa = selectedMahasiswa.id;
-                                    print(idMahasiswa);
-                                  });
-                                },
-                                icon: Icon(Icons.edit),
-                                tooltip: 'Edit',
-                              ),
                             ],
                           ),
                           onTap: () async {

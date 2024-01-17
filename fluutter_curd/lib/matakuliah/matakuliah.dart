@@ -2,7 +2,7 @@ class MataKuliah {
   final int id;
   final String nama;
   final String kode;
-  final int sks; // Properti SKS ditambahkan
+  final int sks;
 
   MataKuliah({
     required this.id,
@@ -13,10 +13,10 @@ class MataKuliah {
 
   factory MataKuliah.fromJson(Map<String, dynamic> json) {
     return MataKuliah(
-      id: json['id'],
-      nama: json['nama'],
-      kode: json['kode'],
-      sks: json['sks'], // Mengambil nilai SKS dari JSON
+      id: json['id'] as int,
+      nama: json['nama'] as String,
+      kode: json['kode'] as String,
+      sks: json['sks'] as int,
     );
   }
 
@@ -25,7 +25,7 @@ class MataKuliah {
       'id': id,
       'nama': nama,
       'kode': kode,
-      'sks': sks, // Menambahkan nilai SKS ke JSON
+      'sks': sks,
     };
   }
 }
