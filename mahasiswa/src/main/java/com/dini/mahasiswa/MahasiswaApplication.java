@@ -1,4 +1,4 @@
-package com.khalil.mahasiswa;
+package com.dini.mahasiswa;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

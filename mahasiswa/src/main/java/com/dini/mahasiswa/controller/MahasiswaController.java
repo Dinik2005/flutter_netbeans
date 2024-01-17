@@ -2,11 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.khalil.mahasiswa.controller;
+package com.dini.mahasiswa.controller;
 
-import com.khalil.mahasiswa.entity.Mahasiswa;
-import com.khalil.mahasiswa.request.MahasiswaRequest;
-import com.khalil.mahasiswa.service.MahasiswaService;
+import com.dini.mahasiswa.entity.Mahasiswa;
+import com.dini.mahasiswa.request.MahasiswaRequest;
+import com.dini.mahasiswa.service.MahasiswaService;
 import jakarta.transaction.Transactional;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

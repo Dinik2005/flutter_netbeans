@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.khalil.mahasiswa.request;
+package com.dini.mahasiswa.request;
 
 /**
  *
@@ -31,7 +31,5 @@ public class MahasiswaRequest {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-    
-    
+    }  
 }
